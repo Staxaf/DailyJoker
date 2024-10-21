@@ -31,7 +31,7 @@ const TabBar: React.FC = () => {
           tabBarLabel: props => (
             <TypographyText
               variant="subCaption"
-              className={`${props.focused ? 'text-primary' : 'text-grey'}`}>
+              className={`mt-2 ${props.focused ? 'text-primary' : 'text-grey'}`}>
               Today
             </TypographyText>
           ),
@@ -52,7 +52,7 @@ const TabBar: React.FC = () => {
           tabBarLabel: props => (
             <TypographyText
               variant="subCaption"
-              className={`${props.focused ? 'text-primary' : 'text-grey'}`}>
+              className={`mt-2 ${props.focused ? 'text-primary' : 'text-grey'}`}>
               History
             </TypographyText>
           ),
@@ -69,6 +69,6 @@ export default TabBar;
 
 const styles = StyleSheet.create({
   tabBar: {
-    marginTop: 10
+    paddingTop: 10
   }
 })

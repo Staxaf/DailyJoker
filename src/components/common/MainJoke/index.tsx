@@ -2,24 +2,28 @@ import React, {useCallback, useState} from 'react';
 import {View} from 'react-native';
 import TypographyText from '../TypographyText';
 import LikeButton from 'components/ui/LikeButton';
+import { JokeType } from 'models/IJoke';
+import { useAppDispatch } from 'hooks/useAppDispatch';
+import { toggleLikeJoke } from 'store/jokes/jokesSlice'; 
 
-// import { Container } from './styles';
+type MainJokeType = {
+  currentJoke: JokeType
+}
 
-const MainJoke: React.FC = () => {
-  const [isLiked, setIsLiked] = useState(false);
+const MainJoke: React.FC<MainJokeType> = ({currentJoke}) => {
+  const dispatch = useAppDispatch()
 
   const toggleIsLiked = useCallback(() => {
-    setIsLiked(isLiked => !isLiked);
-  }, [isLiked]);
+    dispatch(toggleLikeJoke(currentJoke.id))
+  }, [currentJoke]);
 
   return (
     <>
       <View className="flex-1 px-6 justify-center items-start">
         <TypographyText variant="subtitle" className="leading-10 mb-4">
-          Java is like Alzheimer's, it starts off slow, but eventually, your
-          memory is gone.
+          {currentJoke.joke}
         </TypographyText>
-          <LikeButton size={'big'} isLiked={isLiked} onPress={toggleIsLiked} />
+          <LikeButton size={'big'} isLiked={currentJoke.isLiked} onPress={toggleIsLiked} />
       </View>
     </>
   );

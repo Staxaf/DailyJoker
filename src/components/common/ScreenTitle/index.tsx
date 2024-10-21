@@ -2,8 +2,6 @@ import React from 'react';
 import {View} from 'react-native';
 import TypographyText from '../TypographyText';
 
-// import { Container } from './styles';
-
 type ScreenTitleType = {
   title: string
 }
