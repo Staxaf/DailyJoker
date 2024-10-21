@@ -12,6 +12,14 @@
 5. Give the ability to like jokes (using AsyncStorage) and show if it’s liked on both screens
 6. Save in Async Storage when user wants to quit app with App State for optimization and reduce operations with Async Storage
 
+### Video demonstration (Android and iOS):
+
+
+https://github.com/user-attachments/assets/93c552a0-0a36-48e6-80b1-1d6ef0799e4e
+
+### TODO:
+1. Before save to Async Storage compare arrays. If there is no changes, dont save new array
+
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
